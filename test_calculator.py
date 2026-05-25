@@ -16,6 +16,9 @@ class CalculatorOperationsTest(unittest.TestCase):
     def test_divide(self):
         self.assertEqual(divide(20, 5), 4)
 
+    def test_divide_with_decimal_result(self):
+        self.assertAlmostEqual(divide(10, 3), 10 / 3)
+
     def test_divide_by_zero_raises_error(self):
         with self.assertRaisesRegex(ValueError, "dividir entre cero"):
             divide(8, 0)
